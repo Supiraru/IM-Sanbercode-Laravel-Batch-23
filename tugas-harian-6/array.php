@@ -21,6 +21,12 @@
         */
     $kids = array("Mike", "Dustin", "Will", "Lucas", "Max", "Eleven"); // Lengkapi di sini
     $adults = array("Hopper", "Nancy",  "Joyce", "Jonathan", "Murray");
+    echo "<pre>";
+    print_r($kids);
+    echo "</pre>";
+    echo "<pre>";
+    print_r($adults);
+    echo "</pre>";
     echo "<h3> Soal 2</h3>";
     /* 
             SOAL NO 2
