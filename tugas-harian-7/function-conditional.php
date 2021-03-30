@@ -80,15 +80,13 @@
         
         
         // Code function di sini
-        function reverse($string){
+        
+        function palindrome($string){
             $output = "";
             for($i = strlen($string)-1; $i >=0 ; $i--){
                 $output .= $string[$i];
             }
-            return $output;
-        }
-        function palindrome($string){
-            $isPalindrome = $string == (reverse($string)) ? "True" : "False";
+            $isPalindrome = $string == $output ? "True" : "False";
             echo "$isPalindrome <br>";
         }
         
