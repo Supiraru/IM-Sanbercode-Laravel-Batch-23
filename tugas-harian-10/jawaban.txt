@@ -1,0 +1,77 @@
+1. Membuat Database buat database
+
+create database myshop;
+
+
+2. Membuat Table di Dalam Database
+
+create table users(
+    id int auto_increment,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    primary key(id)
+);
+
+create table categories(
+    id int auto_increment,
+    name varchar(255),
+    primary key(id)
+);
+
+create table items(
+    id int auto_increment,
+    name varchar(255),
+    description varchar(255),
+    price int,
+    stock int, 
+    category_id int,
+    primary key(id),
+    foreign key(category_id) references categories(id)  
+);
+
+
+3. Memasukkan Data pada Table
+
+insert into users(name, email, password) 
+values
+("John Doe", "john@doe.com", "john123"),
+("Jane Doe","jane@doe.com", "jenita123");
+
+insert into categories(name) 
+values
+("gadget"),
+("cloth"),
+("men"),
+("women"),
+("branded");
+
+insert into items(name, description, price, stock, category_id)
+values
+("Sumsang b50", "hape keren dari merek sumsang", 4000000, 100, 1),
+("Uniklooh", "baju keren dari brand ternama", 500000, 50, 2),
+("IMHO Watch", "jam tangan anak yang jujur banget", 2000000, 10, 1);
+
+
+
+4. Mengambil Data dari Database
+
+A. select name, email from users;
+
+B. 
+bagian 1:
+select * from items where price > 1000000;
+ 
+bagian 2:
+select * from items where name like "%uniklo%";
+select * from items where name like "%watch%";
+select * from items where name like "%sang%";
+
+C. 
+select i.name, i.description, i.price, i.stock, i.category_id, c.name AS kategori 
+from items i inner join categories c on i.category_id = c.id;
+
+
+5. Menampilkan data items join dengan kategori
+
+update items set price=2500000 where name like "%sumsang%";
