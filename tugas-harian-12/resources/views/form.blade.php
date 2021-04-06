@@ -71,7 +71,7 @@
             </div>
             <button type="submit">Sign Up</button>
             <br />
-            <a href="index.html">back to index</a>
+            <a href="{{ route('home') }}">back to index</a>
         </form>
     </body>
 </html>
