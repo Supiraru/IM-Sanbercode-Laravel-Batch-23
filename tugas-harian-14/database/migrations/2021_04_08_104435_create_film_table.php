@@ -15,12 +15,12 @@ class CreateFilmTable extends Migration
     {
         Schema::create('film', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('judul');
-            $table->string('ringkasan');
-            $table->integer('tahun');
-            $table->string('poster');
+            $table->string('judul', 45);
+            $table->string('ringkasan', 45);
+            $table->string('tahun', 45);
+            $table->string('poster', 45);
             $table->unsignedBigInteger('genre_id');
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('genre_id')->references('id')->on('genre');
             $table->timestamps();
         });
     }

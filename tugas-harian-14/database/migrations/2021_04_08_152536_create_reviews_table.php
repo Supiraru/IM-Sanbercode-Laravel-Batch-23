@@ -13,12 +13,12 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('kritik', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kritik');
-            $table->integer('rating');
+            $table->text('isi');
+            $table->integer('pont');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('user');
             $table->unsignedBigInteger('film_id');
             $table->foreign('film_id')->references('id')->on('film');
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('kritik');
     }
 }

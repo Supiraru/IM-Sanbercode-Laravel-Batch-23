@@ -13,10 +13,11 @@ class CreateCastsTable extends Migration
      */
     public function up()
     {
-        Schema::create('casts', function (Blueprint $table) {
+        Schema::create('cast', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
-            $table->integer('umur');
+            $table->string('nama', 45);
+            $table->string('umur', 45);
+            $table->text('bio');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateCastsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('casts');
+        Schema::dropIfExists('cast');
     }
 }
